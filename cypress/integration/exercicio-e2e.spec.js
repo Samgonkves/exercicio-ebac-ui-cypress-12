@@ -1,8 +1,7 @@
 /// <reference types="cypress" />
 
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
-    /*  Como cliente 
-        Quero acessar a Loja EBAC 
+     Como cliente 
         Para fazer um pedido de 4 produtos 
         Fazendo a escolha dos produtos
         Adicionando ao carrinho
