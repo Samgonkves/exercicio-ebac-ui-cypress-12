@@ -1,14 +1,17 @@
 /// <reference types="cypress" />
 
+import produtosPage from "../../support/page-objects/funcionalidade.page";
+
 describe('Escolher e comprar 4 itens do EBAC Shop', () => {
     
     beforeEach(() => {
         cy.visit('produtos')
     });
 
-    afterEach(() => {
-        cy.screenshot()
-    });
+    //afterEach(() => {
+       // cy.viewport(1280, 720)
+        //cy.screenshot()
+    //});
 
     it('Escolhendo o primeiro produto', () => {
         cy.get('.product-block').eq(7).click()
@@ -19,7 +22,9 @@ describe('Escolher e comprar 4 itens do EBAC Shop', () => {
         cy.get('.woocommerce-message').should('exist')
     });
 
-    it('', () => {
-        
+    it.only('Selecionar um produto da lista', () => {
+            let blusa = 'Daphne Full-Zip Hoodie'
+            produtosPage.buscarProduto(blusa)
     });
+
 });

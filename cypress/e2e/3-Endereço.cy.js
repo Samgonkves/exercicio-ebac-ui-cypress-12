@@ -1,7 +1,6 @@
 /// <reference types="cypress" />
 import { faker } from '@faker-js/faker';
-import { name } from 'faker/lib/locales/az';
-import Name from 'faker/lib/name';
+
 
 describe('Completar endereço de envio', () => {
 

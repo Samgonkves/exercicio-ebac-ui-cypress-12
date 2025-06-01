@@ -30,7 +30,7 @@ describe('Realizar cadastro para finalizra a compra', () => {
     });
 
     it('Completar cadastro com Comando personalizado', () => {
-         var nome = faker.person.firstName()
+        var nome = faker.person.firstName()
         var email = faker.internet.email(nome)
         var sobren = faker.person.lastName()
         cy.primeiroCadastro(email,'teste@senha', nome, sobren)
