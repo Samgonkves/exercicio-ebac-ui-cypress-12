@@ -1,9 +1,19 @@
-class comprarProdutos {
+class comprarProduto {
+    visitarUrl () {
+        cy.visit('produtos')
+    }
 
-    buscarProduto(nomeProduto) {
+    buscarProduto (nomeProduto) {
         cy.get('[name="s"]').eq(1).type(nomeProduto)
         cy.get('.button-search').eq(1).click()
     }
+
+    buscarProdutoLista (nomeProduto) {
+        cy.get('.products >.row')
+        .contains(nomeProduto)
+        .click()
+    }
+
     visitarProduto (novoProduto) {
         //cy.visit(`produtos/${novoProduto}`)
         const urlFormatada = novoProduto.replace(/ /g, '-')
@@ -15,8 +25,9 @@ class comprarProdutos {
         cy.get(`.button-variable-item-${cor}`).click()
         cy.get('.input-text').clear().type(quantidade)
         cy.get('.single_add_to_cart_button').click()
+        
     }
-
+    
 }
 
-export default new comprarProdutos()
+export default new comprarProduto()

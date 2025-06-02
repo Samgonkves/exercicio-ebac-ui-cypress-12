@@ -8,7 +8,7 @@ describe('Realizar cadastro para finalizra a compra', () => {
     });
 
     it('Cadastrar email e senha', () => {
-        cy.get('#reg_email').clear().type(faker.internet.email())
+        cy.get('#reg_email').clear().type(smg@gmail.com)
         cy.get('#reg_password').type('senha@456')
         cy.get(':nth-child(4) > .button').click()
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
@@ -16,7 +16,7 @@ describe('Realizar cadastro para finalizra a compra', () => {
 
     it('Cadastrar dados da conta', () => {
         var nome = faker.person.firstName()
-        var email = faker.internet.email(nome)
+        var email = smg@gmail.com
         var sobren = faker.person.lastName()
 
         cy.get('#reg_email').clear().type(email)

@@ -1,17 +1,16 @@
-/// <reference types="cypress" />
+/// <reference types = 'cypress'/>
 
-import produtosPage from "../../support/page-objects/funcionalidade.page";
+import comprarProduto from "../support/page_objects/funcionalidade.page";
 
-describe('Escolher e comprar 4 itens do EBAC Shop', () => {
-    
+describe('Funcionalidades:Produtos', () => {
     beforeEach(() => {
-        cy.visit('produtos')
+        comprarProduto.visitarUrl()
     });
 
-    //afterEach(() => {
-       // cy.viewport(1280, 720)
-        //cy.screenshot()
-    //});
+    afterEach(() => {
+        cy.viewport(1280, 720)
+        cy.screenshot()
+    });
 
     it('Escolhendo o primeiro produto', () => {
         cy.get('.product-block').eq(7).click()
@@ -22,9 +21,34 @@ describe('Escolher e comprar 4 itens do EBAC Shop', () => {
         cy.get('.woocommerce-message').should('exist')
     });
 
-    it.only('Selecionar um produto da lista', () => {
-            let blusa = 'Daphne Full-Zip Hoodie'
-            produtosPage.buscarProduto(blusa)
+    it('Comprar produtos da massa de produtos', () => {
+        cy.fixture('produtos').then(dados =>{
+            comprarProduto.buscarProduto(dados[1].nomeProduto)
+            comprarProduto.addProdutoCarrinho(
+                dados[1].cor, 
+                dados[1].tamanho,
+                dados[1].qtd)
+                cy.get('.woocommerce-message').should('exist')
+        })
+    });
+
+     it('Comprar produtos da massa de produtos', () => {
+        cy.fixture('produtos').then(dados =>{
+            comprarProduto.buscarProduto(dados[0].nomeProduto)
+            comprarProduto.addProdutoCarrinho(
+                dados[0].cor, 
+                dados[1].tamanho,
+                dados[2].qtd)
+                cy.get('.woocommerce-message').should('exist')
+        })
+    });
+
+    it('Selecionar o ultimo produto', () => {
+        let calça = 'Cronus Yoga Pant'
+        comprarProduto.buscarProduto(calça)
+        comprarProduto.addProdutoCarrinho('36', 'Black', '10')
+        cy.get('.woocommerce-message').should('contain', calça)
+        
     });
 
 });
