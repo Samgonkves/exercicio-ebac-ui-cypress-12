@@ -3,6 +3,8 @@
 
 Ebac shop: http://lojaebac.ebaconline.art.br/
 
+Exercícios de Teste de UI com Cypress (Mod.12)
+
 ## Clonando e executando em sua máquina
 
 ### Pré-requisito:
