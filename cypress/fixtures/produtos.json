@@ -9,12 +9,18 @@
         "nomeProduto": "Celeste Sports Bra",
         "tamanho": "M",
         "cor": "Red",
-        "qtd": 10
+        "qtd": 1
     },
      {
         "nomeProduto": "Cronus Yoga Pant",
         "tamanho": "36",
         "cor": "Black",
         "qtd": 6
+    },
+    {
+        "nomeProduto": "Augusta Pullover Jacket",
+        "tamanho": "M",
+        "cor": "Blue",
+        "qtd": 3
     }
 ]
